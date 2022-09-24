@@ -1,0 +1,13 @@
+.header {
+  padding: 13px 0;
+  background-color: #fff;
+  .header-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navigations-btn {
+    display: flex;
+    align-items: center;
+  }
+}

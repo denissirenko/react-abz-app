@@ -1,0 +1,26 @@
+.user-item {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  .img-wrap {
+    margin: 0 auto 20px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .user-name {
+    margin-bottom: 20px;
+    text-align: center;
+    overflow: hidden;
+  }
+  div {
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .link {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.87);
+  }
+}

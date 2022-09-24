@@ -1,0 +1,180 @@
+.form {
+  margin: 0 auto;
+  max-width: 380px;
+  &-control {
+    position: relative;
+    width: 100%;
+    height: 54px;
+    margin-bottom: 50px;
+    &.error {
+      .form-label {
+        color: #cb3d40;
+      }
+      .form-input {
+        border: 1px solid #cb3d40;
+      }
+    }
+  }
+
+  &-label {
+    position: absolute;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    left: 16px;
+    top: 14px;
+    padding: 0 4px;
+    color: #7e7e7e;
+    background: #e5e5e5;
+    transition: all 0.3s ease;
+  }
+
+  &-helper {
+    position: absolute;
+    left: 16px;
+    bottom: -18px;
+    font-size: 12px;
+    line-height: 14px;
+    color: #cb3d40;
+  }
+
+  &-input {
+    position: absolute;
+    font-size: 16px;
+    line-height: 26px;
+    top: 0;
+    left: 0;
+    resize: none;
+    width: 100%;
+    height: auto;
+    padding: 14px 16px;
+    border-radius: 4px;
+    border: 1px solid #d0cfcf;
+    background: #e5e5e5;
+    transition: all 0.2s ease-in-out;
+
+    &::placeholder {
+      opacity: 0;
+      visibility: hidden;
+      color: transparent;
+    }
+
+    &:focus {
+      outline: none;
+
+      & ~ .form-label {
+        top: -0.75rem;
+        left: 12px;
+        z-index: 5;
+        font-size: 12px;
+        font-weight: 500;
+        background: #e5e5e5;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+
+    &:not(:placeholder-shown).form-input {
+      &:not(:focus) {
+        & ~ .form-label {
+          top: -0.75rem;
+          left: 12px;
+          z-index: 9;
+          font-size: 12px;
+          font-weight: 500;
+          transition: all 0.2s ease-in-out;
+        }
+      }
+    }
+  }
+
+  .radio-group {
+    margin-bottom: 40px;
+    position: relative;
+    margin-top: -7px;
+    .radio-group-title {
+      margin-bottom: 5px;
+    }
+    .radio-item:not(:last-child) {
+      margin-bottom: 10px;
+    }
+    .radio-label {
+      padding-left: 32px;
+      position: relative;
+      cursor: pointer;
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #d0cfcf;
+        border-radius: 50%;
+      }
+    }
+    .radio-input:checked + .radio-label::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #00bdd3;
+      border-radius: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 6px;
+      color: #00bdd3;
+    }
+    .radio-input:checked + .radio-label::before {
+      border: 1px solid #00bdd3;
+    }
+    .form-helper {
+      position: absolute;
+      left: 16px;
+      bottom: -18px;
+      font-size: 12px;
+      line-height: 14px;
+      color: #cb3d40;
+    }
+  }
+
+  .file-group {
+    position: relative;
+    margin-bottom: 50px;
+    &.file-error {
+      .label,
+      .file-text {
+        border: 2px solid #cb3d40;
+      }
+    }
+    .label-wrap {
+      display: flex;
+    }
+    .label {
+      padding: 14px 15px;
+      cursor: pointer;
+      border: 1px solid rgba(0, 0, 0, 0.87);
+      border-radius: 4px 0px 0px 4px;
+    }
+    .file-text {
+      padding: 14px 15px;
+      border: 1px solid #d0cfcf;
+      border-left: none !important;
+      border-radius: 0 4px 4px 0;
+      flex-grow: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .form-helper {
+      position: absolute;
+      left: 16px;
+      bottom: -18px;
+      font-size: 12px;
+      line-height: 14px;
+      color: #cb3d40;
+    }
+  }
+}
