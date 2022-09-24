@@ -1,14 +1,18 @@
 import React from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { isWebpSupported } from 'react-image-webp/dist/utils';
 
 import bg from '../../../assets/pexels-alexandr-podvalny-1227513.jpeg';
+import bgWebp from '../../../assets/pexels-alexandr-podvalny-1227513.webp';
 import styles from './Hero.module.scss';
 
 export const Hero = () => {
   return (
     <section className={styles.hero}>
       <div className={`container ${styles['hero-container']}`}>
-        <div className={styles['hero-inner']} style={{ backgroundImage: `url(${bg})` }}>
+        <div
+          className={styles['hero-inner']}
+          style={{ backgroundImage: `url(${isWebpSupported() ? bgWebp : bg})` }}>
           <div className={styles['hero-content']}>
             <h1>Test assignment for front-end developer</h1>
             <p className={styles['hero-text']}>
