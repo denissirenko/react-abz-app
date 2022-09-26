@@ -15,7 +15,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    border: 8px solid #e5e5e5;
+    border: 8px solid #f8f8f8;
     border-top: 8px solid transparent;
     border-right: 8px solid transparent;
     border-bottom: 8px solid transparent;
@@ -26,12 +26,12 @@
     width: calc(48px - 6px);
     height: calc(48px - 6px);
     border-radius: 50%;
-    background: #e5e5e5;
+    background: #f8f8f8;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 5px #e5e5e5;
+    box-shadow: 0 0 5px #f8f8f8;
   }
 }
 
