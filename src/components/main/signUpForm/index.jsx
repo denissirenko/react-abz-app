@@ -20,6 +20,10 @@ import classNames from 'classnames';
 
 export const SignUpForm = () => {
   const [fileName, setFileName] = useState('Upload your photo');
+  const [errorTextForm, setErrorTextForm] = useState({
+    error: false,
+    text: '',
+  });
   const dispatch = useDispatch();
   const { registrated } = useSelector(selectUsersData);
   const { token, positions } = useFetch();
@@ -52,6 +56,11 @@ export const SignUpForm = () => {
           dispatch(resetUsers());
           dispatch(fetchUsers());
           dispatch(setRegistrated());
+        } else {
+          setErrorTextForm({
+            error: true,
+            text: data.message,
+          });
         }
       })
       .catch(function (error) {
@@ -180,6 +189,10 @@ export const SignUpForm = () => {
                 </div>
                 <p className={styles['form-helper']}>{errors.photo?.message}</p>
               </div>
+
+              {errorTextForm.error && (
+                <div className={styles['form-error-text']}>{errorTextForm.text}</div>
+              )}
 
               <button
                 className="btn"
